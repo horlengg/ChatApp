@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		105E00D62FDBC12C004344DB /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 105E00D52FDBC12C004344DB /* demo.png */; };
+		107035352FD5BBE2004B7E67 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 107035342FD5BBE2004B7E67 /* Alamofire */; };
+		10AD34D92FD579D10054BF5B /* EasyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 10AD34D82FD579D10054BF5B /* EasyLogger */; };
+		10FF67D72FD69089008459BD /* EasyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 10FF67D62FD69089008459BD /* EasyLogger */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		10F693212FD5175D0004B440 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,14 +31,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		105E00D52FDBC12C004344DB /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		10F693132FD5175C0004B440 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F693202FD5175D0004B440 /* ChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F6932A2FD5175D0004B440 /* ChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		10F693772FD518E80004B440 /* Exceptions for "ChatApp" folder in "ChatApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 10F693122FD5175C0004B440 /* ChatApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		10F693152FD5175C0004B440 /* ChatApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				10F693772FD518E80004B440 /* Exceptions for "ChatApp" folder in "ChatApp" target */,
+			);
 			path = ChatApp;
 			sourceTree = "<group>";
 		};
@@ -52,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107035352FD5BBE2004B7E67 /* Alamofire in Frameworks */,
+				10AD34D92FD579D10054BF5B /* EasyLogger in Frameworks */,
+				10FF67D72FD69089008459BD /* EasyLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +103,7 @@
 				10F693232FD5175D0004B440 /* ChatAppTests */,
 				10F6932D2FD5175D0004B440 /* ChatAppUITests */,
 				10F693142FD5175C0004B440 /* Products */,
+				105E00D52FDBC12C004344DB /* demo.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +137,9 @@
 			);
 			name = ChatApp;
 			packageProductDependencies = (
+				10AD34D82FD579D10054BF5B /* EasyLogger */,
+				107035342FD5BBE2004B7E67 /* Alamofire */,
+				10FF67D62FD69089008459BD /* EasyLogger */,
 			);
 			productName = ChatApp;
 			productReference = 10F693132FD5175C0004B440 /* ChatApp.app */;
@@ -195,6 +223,10 @@
 			);
 			mainGroup = 10F6930A2FD5175C0004B440;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				107035332FD5BBE2004B7E67 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				10FF67D52FD69089008459BD /* XCLocalSwiftPackageReference "../../../../publish_libs/EasyLogger" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 10F693142FD5175C0004B440 /* Products */;
 			projectDirPath = "";
@@ -212,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105E00D62FDBC12C004344DB /* demo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +433,11 @@
 				DEVELOPMENT_TEAM = NY28UPWMBF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatApp/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "App requires access to the local network to discover and connect to streaming devices.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Used to detect when you arrive or leave the office.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Used to detect when you arrive or leave the office.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to track your route.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -409,8 +447,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOG_SERVER_URI = "";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp.ChatApp;
+				OTHER_SWIFT_FLAGS = "\"-DENABLE_EASY_LOGGER\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -432,6 +472,11 @@
 				DEVELOPMENT_TEAM = NY28UPWMBF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatApp/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "App requires access to the local network to discover and connect to streaming devices.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Used to detect when you arrive or leave the office.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Used to detect when you arrive or leave the office.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to track your route.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -441,8 +486,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOG_SERVER_URI = "";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp.ChatApp;
+				OTHER_SWIFT_FLAGS = "\"-DENABLE_EASY_LOGGER\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -538,6 +585,151 @@
 			};
 			name = Release;
 		};
+		10FF67D82FD691A2008459BD /* Debug-Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = NY28UPWMBF;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-Dev";
+		};
+		10FF67D92FD691A2008459BD /* Debug-Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY28UPWMBF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatApp/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "App requires access to the local network to discover and connect to streaming devices.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Used to detect when you arrive or leave the office.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Used to detect when you arrive or leave the office.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to track your route.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOG_SERVER_URI = "http://10.105.141.142:3000";
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "\"-DENABLE_EASY_LOGGER\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-Dev";
+		};
+		10FF67DA2FD691A2008459BD /* Debug-Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY28UPWMBF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp.ChatAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChatApp";
+			};
+			name = "Debug-Dev";
+		};
+		10FF67DB2FD691A2008459BD /* Debug-Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY28UPWMBF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lengdev.chatapp.ChatAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChatApp;
+			};
+			name = "Debug-Dev";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -545,6 +737,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				10F693322FD5175D0004B440 /* Debug */,
+				10FF67D82FD691A2008459BD /* Debug-Dev */,
 				10F693332FD5175D0004B440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -554,6 +747,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				10F693352FD5175D0004B440 /* Debug */,
+				10FF67D92FD691A2008459BD /* Debug-Dev */,
 				10F693362FD5175D0004B440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -563,6 +757,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				10F693382FD5175D0004B440 /* Debug */,
+				10FF67DA2FD691A2008459BD /* Debug-Dev */,
 				10F693392FD5175D0004B440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -572,12 +767,47 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				10F6933B2FD5175D0004B440 /* Debug */,
+				10FF67DB2FD691A2008459BD /* Debug-Dev */,
 				10F6933C2FD5175D0004B440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		10FF67D52FD69089008459BD /* XCLocalSwiftPackageReference "../../../../publish_libs/EasyLogger" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../../publish_libs/EasyLogger;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		107035332FD5BBE2004B7E67 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		107035342FD5BBE2004B7E67 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 107035332FD5BBE2004B7E67 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		10AD34D82FD579D10054BF5B /* EasyLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EasyLogger;
+		};
+		10FF67D62FD69089008459BD /* EasyLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EasyLogger;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10F6930B2FD5175C0004B440 /* Project object */;
 }
